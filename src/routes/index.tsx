@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroBg from "@/assets/hero-bg.jpg";
 import { projects } from "@/components/site-chrome";
+import { Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
