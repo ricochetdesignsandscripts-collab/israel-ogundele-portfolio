@@ -4,18 +4,21 @@ import { PageShell, projects } from "@/components/site-chrome";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Israel Ogundele" },
+      { title: "Selected Work — Ogundele Israel Oluwaseun" },
       {
         name: "description",
         content:
-          "Selected product design case studies: fintech dashboards, shared living apps, food ordering and motion tooling.",
+          "Selected work: GIGAEDEN, ONESQUAREMETER, ROCKETLINE, Olamata's Touch and Maintenance Tracker — brand identity, product design and software.",
       },
-      { property: "og:title", content: "Projects — Israel Ogundele" },
+      { property: "og:title", content: "Selected Work — Ogundele Israel Oluwaseun" },
       {
         property: "og:description",
-        content: "Selected product design case studies and the thinking behind them.",
+        content: "Brand identity, product design and software projects from 2022 to 2024.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
+    links: [{ rel: "canonical", href: "/projects" }],
   }),
   component: Projects,
 });
@@ -23,21 +26,23 @@ export const Route = createFileRoute("/projects")({
 function Projects() {
   return (
     <PageShell
-      eyebrow="Projects"
-      title="Selected work."
-      intro="A few projects that show how I think — from research and structure through to the final interface."
+      eyebrow="Selected work"
+      title="Brands, products and systems."
+      intro="A selection of identity, product and software work built between 2022 and 2024."
     >
       <div className="divide-y divide-border border-y border-border">
         {projects.map((p, i) => (
           <article key={p.slug} className="group grid gap-6 py-12 md:grid-cols-[auto_1fr_1fr]">
-            <span className="text-sm text-muted-foreground">0{i + 1}</span>
+            <span className="text-sm text-muted-foreground">
+              0{i + 1} · {p.year}
+            </span>
             <div>
               <p className="eyebrow">{p.kind}</p>
               <h2 className="mt-2 text-4xl transition-colors group-hover:text-primary">
                 {p.name}
               </h2>
             </div>
-            <p className="text-muted-foreground leading-relaxed">{p.blurb}</p>
+            <p className="leading-relaxed text-muted-foreground">{p.blurb}</p>
           </article>
         ))}
       </div>
