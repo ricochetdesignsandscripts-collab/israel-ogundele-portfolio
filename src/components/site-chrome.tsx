@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 const nav = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  { to: "/projects", label: "Projects" },
-  { to: "/skills", label: "Skills" },
+  { to: "/projects", label: "Work" },
+  { to: "/skills", label: "Services" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -46,20 +46,46 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="font-display text-2xl">
-            Israel Ogundele<span className="text-primary">.</span>
+            Ogundele Israel Oluwaseun<span className="text-primary">.</span>
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Product Designer — available for new work.
+            Creative Technologist — Lagos, Nigeria. Available for work.
           </p>
         </div>
         <div className="flex flex-col gap-2 text-sm text-muted-foreground md:items-end">
-          <a href="mailto:hello@example.com" className="link-underline w-fit hover:text-foreground">
-            hello@example.com
+          <a href="mailto:iogundele8@gmail.com" className="link-underline w-fit hover:text-foreground">
+            iogundele8@gmail.com
           </a>
-          <Link to="/contact" className="link-underline w-fit hover:text-foreground">
-            Contact
-          </Link>
-          <span className="text-xs">© 2026 Israel Ogundele. Designed with care.</span>
+          <a href="tel:+2348128496837" className="link-underline w-fit hover:text-foreground">
+            +234 812 849 6837
+          </a>
+          <div className="flex gap-5">
+            <a
+              href="https://x.com/IsraelOgundele7"
+              target="_blank"
+              rel="noreferrer"
+              className="link-underline hover:text-foreground"
+            >
+              X
+            </a>
+            <a
+              href="https://instagram.com/oluwaseunisrael"
+              target="_blank"
+              rel="noreferrer"
+              className="link-underline hover:text-foreground"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="link-underline hover:text-foreground"
+            >
+              LinkedIn
+            </a>
+          </div>
+          <span className="text-xs">© 2026 Ogundele Israel Oluwaseun.</span>
         </div>
       </div>
     </footer>
@@ -91,31 +117,43 @@ export function PageShell({
 
 export const projects = [
   {
-    slug: "atlas",
-    kind: "Fintech Dashboard",
-    name: "Atlas",
+    slug: "gigaeden",
+    year: "2023",
+    kind: "Complete Brand Identity — Technology / Hospitality",
+    name: "GIGAEDEN",
     blurb:
-      "A payments dashboard that turns dense transaction data into calm, scannable insight for small business owners.",
+      "Logo, brand identity, typography and colour system extended across digital applications, product design and a full technology ecosystem.",
   },
   {
-    slug: "cohabit",
-    kind: "Shared Living App",
-    name: "Cohabit",
+    slug: "onesquaremeter",
+    year: "2024",
+    kind: "Hospitality Database System — Technology",
+    name: "ONESQUAREMETER",
     blurb:
-      "Helps roommates split bills and track chores without the friction that usually leads to conflict.",
+      "Database interface and system architecture, from data structure and user flows through to the finished UI screens.",
   },
   {
-    slug: "harvest",
-    kind: "Food Ordering Platform",
-    name: "Harvest",
+    slug: "rocketline",
+    year: "2023",
+    kind: "Complete Brand Identity — Fashion",
+    name: "ROCKETLINE",
     blurb:
-      "A mobile-first ordering flow where browsing, ordering, and tracking a meal feel as good as the food.",
+      "Logo, visual identity, typography and colour system, applied across brand collateral and campaign visuals.",
   },
   {
-    slug: "motion",
-    kind: "Design Reference Tool",
-    name: "Motion Dictionary",
+    slug: "olamatas-touch",
+    year: "2022",
+    kind: "Complete Brand Identity — Aluminum Fabrication",
+    name: "OLAMATA'S TOUCH",
     blurb:
-      "An interactive reference giving every easing curve a personality, so teams can choose motion with intent.",
+      "A logo and brand system with typography, colour palette and marketing materials for a fabrication business.",
+  },
+  {
+    slug: "maintenance-tracker",
+    year: "2022",
+    kind: "Operations Software — Andela TeenCode Programme",
+    name: "MAINTENANCE TRACKER",
+    blurb:
+      "A dashboard for maintenance records and tracking, covering the workflow and system logic end to end.",
   },
 ];
