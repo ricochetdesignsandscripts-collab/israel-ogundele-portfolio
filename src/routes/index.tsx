@@ -35,42 +35,55 @@ const stats = [
 function Index() {
   return (
     <main>
-      <section className="relative overflow-hidden">
+      <section className="grain relative overflow-hidden">
         <img
           src={heroBg}
           alt=""
           width={1920}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
+        <div className="glow pointer-events-none absolute -top-40 left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 opacity-70" />
         <div className="relative mx-auto max-w-6xl px-6 py-32 md:py-44">
-          <p className="eyebrow">Available for work — Lagos, Nigeria</p>
-          <h1 className="mt-6 max-w-4xl text-5xl leading-[1.02] md:text-7xl">
+          <p className="eyebrow rise-in">Available for work — Lagos, Nigeria</p>
+          <h1
+            className="rise-in mt-6 max-w-4xl text-5xl leading-[1.02] md:text-7xl"
+            style={{ animationDelay: "80ms" }}
+          >
             I design identities, products and{" "}
             <span className="text-primary">digital experiences</span> that turn ideas into
             reality.
           </h1>
-          <p className="mt-8 max-w-xl text-lg text-muted-foreground">
+          <p
+            className="rise-in mt-8 max-w-xl text-lg text-muted-foreground"
+            style={{ animationDelay: "180ms" }}
+          >
             I'm Ogundele Israel Oluwaseun, a multidisciplinary creative technologist. I combine
             graphic design, product design, technology and strategic thinking to create
             meaningful brands and functional digital experiences.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div
+            className="rise-in mt-10 flex flex-wrap gap-4"
+            style={{ animationDelay: "260ms" }}
+          >
             <Link
               to="/projects"
-              className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-10px_var(--primary)]"
             >
               View my work →
             </Link>
             <Link
               to="/contact"
-              className="rounded-full border border-border px-6 py-3 text-sm transition-colors hover:bg-accent"
+              className="rounded-full border border-border px-6 py-3 text-sm transition-colors hover:border-primary/60 hover:bg-accent"
             >
               Let's work together
             </Link>
           </div>
-          <div className="mt-16 grid max-w-lg grid-cols-3 gap-6">
+          <div
+            className="rise-in mt-16 grid max-w-lg grid-cols-3 gap-6"
+            style={{ animationDelay: "340ms" }}
+          >
             {stats.map((s) => (
               <div key={s.label}>
                 <p className="font-display text-4xl text-primary">{s.value}</p>
@@ -81,7 +94,32 @@ function Index() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-card/40">
+      <div className="overflow-hidden border-y border-border bg-card/30 py-4">
+        <div className="marquee-track">
+          {[0, 1].map((dup) => (
+            <div key={dup} className="flex shrink-0 items-center gap-10 pr-10">
+              {[
+                "Brand Identity",
+                "Product Design",
+                "UI/UX",
+                "Design Systems",
+                "Web Development",
+                "Creative Direction",
+              ].map((word) => (
+                <span
+                  key={word}
+                  className="eyebrow flex items-center gap-10 whitespace-nowrap"
+                >
+                  {word}
+                  <span className="text-primary">◆</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section className="border-b border-border bg-card/40">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-16 md:grid-cols-3">
           {[
             {
@@ -96,17 +134,17 @@ function Index() {
               t: "Web Design & Development",
               d: "Responsive, functional and scalable digital experiences.",
             },
-          ].map((s) => (
-            <div key={s.t}>
+          ].map((s, i) => (
+            <Reveal key={s.t} delay={i * 90}>
               <h2 className="text-2xl">{s.t}</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex items-end justify-between border-b border-border pb-6">
+        <Reveal className="flex items-end justify-between border-b border-border pb-6">
           <div>
             <p className="eyebrow">Selected work</p>
             <h2 className="mt-3 text-4xl">Recent projects</h2>
@@ -114,19 +152,21 @@ function Index() {
           <Link to="/projects" className="link-underline text-sm text-muted-foreground">
             View all
           </Link>
-        </div>
+        </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {projects.slice(0, 4).map((p) => (
-            <article
+          {projects.slice(0, 4).map((p, i) => (
+            <Reveal
               key={p.slug}
-              className="group rounded-xl border border-border bg-card p-8 transition-colors hover:border-primary/50"
+              as="article"
+              delay={i * 80}
+              className="hover-lift group rounded-xl border border-border bg-card p-8 hover:border-primary/50"
             >
               <p className="eyebrow">{p.kind}</p>
               <h3 className="mt-3 text-3xl transition-colors group-hover:text-primary">
                 {p.name}
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.blurb}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
