@@ -69,7 +69,7 @@ function Index() {
           >
             <Link
               to="/projects"
-              className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-10px_var(--primary)]"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_var(--primary)]"
             >
               View my work →
             </Link>
@@ -159,7 +159,7 @@ function Index() {
               key={p.slug}
               as="article"
               delay={i * 80}
-              className="hover-lift group rounded-xl border border-border bg-card p-8 hover:border-primary/50"
+              className="hover-lift group rounded-lg border border-border bg-card p-8 hover:border-primary/50"
             >
               <p className="eyebrow">{p.kind}</p>
               <h3 className="mt-3 text-3xl transition-colors group-hover:text-primary">

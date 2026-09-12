@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site-chrome";
+import { Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/skills")({
   head: () => ({
@@ -124,14 +125,14 @@ function Skills() {
       intro="Three connected practices — design, brand and technology — that take an idea from a blank canvas to a working product."
     >
       <div className="grid gap-6 md:grid-cols-3">
-        {services.map((s) => (
-          <div key={s.no} className="rounded-xl border border-border bg-card p-8">
-            <p className="eyebrow">{s.no}</p>
+        {services.map((s, index) => (
+          <Reveal key={s.no} delay={index * 110} className="interactive-card group rounded-lg border border-border bg-card p-8">
+            <p className="eyebrow font-display text-3xl text-primary transition-transform duration-300 group-hover:translate-x-2">{s.no}</p>
             <h2 className="mt-3 text-2xl">{s.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
             <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
               {s.items.map((i) => (
-                <li key={i} className="flex gap-3">
+                <li key={i} className="skill-line flex gap-3">
                   <span className="text-primary">—</span>
                   {i}
                 </li>
@@ -143,25 +144,25 @@ function Skills() {
             >
               Start a conversation
             </Link>
-          </div>
+          </Reveal>
         ))}
       </div>
 
       <div className="mt-20">
         <p className="eyebrow">Skills</p>
         <div className="mt-6 grid gap-6 md:grid-cols-3">
-          {skillGroups.map((g) => (
-            <div key={g.title} className="rounded-xl border border-border p-8">
+          {skillGroups.map((g, index) => (
+            <Reveal key={g.title} delay={index * 100} className="interactive-card rounded-lg border border-border p-8">
               <h2 className="text-2xl">{g.title}</h2>
               <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
                 {g.items.map((i) => (
-                  <li key={i} className="flex gap-3">
+                  <li key={i} className="skill-line flex gap-3">
                     <span className="text-primary">—</span>
                     {i}
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

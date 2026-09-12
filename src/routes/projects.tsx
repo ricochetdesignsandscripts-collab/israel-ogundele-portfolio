@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, projects } from "@/components/site-chrome";
+import { Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -32,18 +33,18 @@ function Projects() {
     >
       <div className="divide-y divide-border border-y border-border">
         {projects.map((p, i) => (
-          <article key={p.slug} className="group grid gap-6 py-12 md:grid-cols-[auto_1fr_1fr]">
-            <span className="text-sm text-muted-foreground">
+          <Reveal key={p.slug} as="article" delay={i * 90} className="project-row group grid gap-6 py-12 md:grid-cols-[auto_1fr_1fr]">
+            <span className="text-sm text-muted-foreground transition-transform duration-300 group-hover:translate-x-1">
               0{i + 1} · {p.year}
             </span>
             <div>
               <p className="eyebrow">{p.kind}</p>
-              <h2 className="mt-2 text-4xl transition-colors group-hover:text-primary">
+              <h2 className="mt-2 text-4xl transition-all duration-300 group-hover:translate-x-2 group-hover:text-primary">
                 {p.name}
               </h2>
             </div>
             <p className="leading-relaxed text-muted-foreground">{p.blurb}</p>
-          </article>
+          </Reveal>
         ))}
       </div>
     </PageShell>

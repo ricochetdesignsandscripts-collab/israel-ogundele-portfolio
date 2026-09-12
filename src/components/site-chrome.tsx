@@ -22,8 +22,8 @@ export function SiteHeader() {
             <Link
               key={item.to}
               to={item.to}
-              className="link-underline transition-colors hover:text-foreground"
-              activeProps={{ className: "text-foreground" }}
+              className="nav-motion relative transition-colors hover:text-foreground"
+              activeProps={{ className: "text-foreground", "data-status": "active" }}
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
@@ -105,7 +105,7 @@ export function PageShell({
   children?: ReactNode;
 }) {
   return (
-    <main className="mx-auto max-w-6xl px-6 py-20">
+    <main className="page-enter mx-auto max-w-6xl px-6 py-20">
       <p className="eyebrow rise-in">{eyebrow}</p>
       <h1
         className="rise-in mt-4 max-w-3xl text-5xl leading-[1.05] md:text-6xl"
