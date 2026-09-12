@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Reveal } from "@/components/reveal";
 import type { ReactNode } from "react";
 
 const nav = [
