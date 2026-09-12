@@ -105,12 +105,22 @@ export function PageShell({
 }) {
   return (
     <main className="mx-auto max-w-6xl px-6 py-20">
-      <p className="eyebrow">{eyebrow}</p>
-      <h1 className="mt-4 max-w-3xl text-5xl leading-[1.05] md:text-6xl">{title}</h1>
+      <p className="eyebrow rise-in">{eyebrow}</p>
+      <h1
+        className="rise-in mt-4 max-w-3xl text-5xl leading-[1.05] md:text-6xl"
+        style={{ animationDelay: "80ms" }}
+      >
+        {title}
+      </h1>
       {intro ? (
-        <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{intro}</p>
+        <p
+          className="rise-in mt-6 max-w-2xl text-lg text-muted-foreground"
+          style={{ animationDelay: "160ms" }}
+        >
+          {intro}
+        </p>
       ) : null}
-      <div className="mt-16">{children}</div>
+      <Reveal className="mt-16">{children}</Reveal>
     </main>
   );
 }
