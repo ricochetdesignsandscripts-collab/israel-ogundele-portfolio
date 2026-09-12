@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site-chrome";
+import { Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -31,19 +32,19 @@ function Contact() {
       intro="Let's turn your idea into something people can see, use and remember."
     >
       <div className="grid gap-12 md:grid-cols-2">
-        <div className="space-y-6">
+        <Reveal className="space-y-6">
           <div>
             <p className="eyebrow">Email</p>
             <a
               href="mailto:iogundele8@gmail.com"
-              className="link-underline mt-2 inline-block text-2xl"
+               className="contact-link link-underline mt-2 inline-block text-2xl"
             >
               iogundele8@gmail.com
             </a>
           </div>
           <div>
             <p className="eyebrow">Phone</p>
-            <a href="tel:+2348128496837" className="link-underline mt-2 inline-block text-2xl">
+            <a href="tel:+2348128496837" className="contact-link link-underline mt-2 inline-block text-2xl">
               +234 812 849 6837
             </a>
           </div>
@@ -58,7 +59,7 @@ function Contact() {
                 href="https://www.linkedin.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="link-underline hover:text-foreground"
+                className="contact-link link-underline inline-block hover:text-foreground"
               >
                 LinkedIn
               </a>
@@ -66,7 +67,7 @@ function Contact() {
                 href="https://x.com/IsraelOgundele7"
                 target="_blank"
                 rel="noreferrer"
-                className="link-underline hover:text-foreground"
+                className="contact-link link-underline inline-block hover:text-foreground"
               >
                 @IsraelOgundele7
               </a>
@@ -74,16 +75,17 @@ function Contact() {
                 href="https://instagram.com/oluwaseunisrael"
                 target="_blank"
                 rel="noreferrer"
-                className="link-underline hover:text-foreground"
+                className="contact-link link-underline inline-block hover:text-foreground"
               >
                 @oluwaseunisrael
               </a>
             </div>
           </div>
-        </div>
+        </Reveal>
 
+        <Reveal as="section" delay={120} className="interactive-card rounded-lg border border-border bg-card p-8">
         <form
-          className="space-y-4 rounded-xl border border-border bg-card p-8"
+          className="space-y-4"
           onSubmit={(e) => e.preventDefault()}
         >
           <div>
@@ -92,7 +94,7 @@ function Contact() {
             </label>
             <input
               id="name"
-              className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="field-motion mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none"
             />
           </div>
           <div>
@@ -102,7 +104,7 @@ function Contact() {
             <input
               id="email"
               type="email"
-              className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="field-motion mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none"
             />
           </div>
           <div>
@@ -111,7 +113,7 @@ function Contact() {
             </label>
             <input
               id="type"
-              className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="field-motion mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none"
             />
           </div>
           <div>
@@ -120,7 +122,7 @@ function Contact() {
             </label>
             <input
               id="budget"
-              className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="field-motion mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none"
             />
           </div>
           <div>
@@ -130,16 +132,17 @@ function Contact() {
             <textarea
               id="message"
               rows={5}
-              className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="field-motion mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none"
             />
           </div>
           <button
             type="submit"
-            className="w-full rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            className="w-full rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_-12px_var(--primary)] active:translate-y-0"
           >
             Submit
           </button>
         </form>
+        </Reveal>
       </div>
     </PageShell>
   );

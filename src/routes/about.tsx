@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site-chrome";
+import { Reveal } from "@/components/reveal";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -129,7 +130,7 @@ function About() {
       intro="I'm a confident, reliable and versatile creative professional with experience spanning graphic design, brand identity, product design, UI/UX, software development, technology, data, creative direction and facility management."
     >
       <div className="grid gap-16 md:grid-cols-2">
-        <div className="space-y-5 leading-relaxed text-muted-foreground">
+        <Reveal className="space-y-5 leading-relaxed text-muted-foreground">
           <p>
             I bridge creative and technical disciplines — moving from a blank canvas to a brand
             identity, from a Figma prototype to a working product, and from a business problem
@@ -148,20 +149,20 @@ function About() {
             "I enjoy solving problems where creativity, technology and human experience
             intersect."
           </blockquote>
-        </div>
+        </Reveal>
 
         <div>
           <p className="eyebrow">Experience</p>
           <ul className="mt-6 divide-y divide-border border-t border-border">
-            {experience.map((e) => (
-              <li key={e.period + e.company} className="py-5">
+            {experience.map((e, i) => (
+              <Reveal key={e.period + e.company} as="li" delay={i * 65} className="timeline-item py-5">
                 <div className="flex items-baseline justify-between gap-6">
                   <p className="text-lg">{e.company}</p>
                   <span className="shrink-0 text-xs text-muted-foreground">{e.period}</span>
                 </div>
                 <p className="text-sm text-primary">{e.role}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{e.note}</p>
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>
@@ -171,24 +172,24 @@ function About() {
         <div>
           <p className="eyebrow">Education</p>
           <ul className="mt-6 space-y-5">
-            {education.map((e) => (
-              <li key={e.title}>
+            {education.map((e, i) => (
+              <Reveal key={e.title} as="li" delay={i * 90}>
                 <p className="text-lg">{e.title}</p>
                 <p className="text-sm text-muted-foreground">
                   {e.place} · {e.years}
                 </p>
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>
         <div>
           <p className="eyebrow">Technology & design training</p>
           <ul className="mt-6 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-            {training.map((t) => (
-              <li key={t} className="flex gap-3">
+            {training.map((t, i) => (
+              <Reveal key={t} as="li" delay={(i % 6) * 45} className="skill-line flex gap-3">
                 <span className="text-primary">—</span>
                 {t}
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>
@@ -197,15 +198,15 @@ function About() {
       <div className="mt-20">
         <p className="eyebrow">Achievements</p>
         <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {achievements.map((a) => (
-            <div key={a.title} className="rounded-xl border border-border bg-card p-6">
+          {achievements.map((a, i) => (
+            <Reveal key={a.title} delay={i * 85} className="interactive-card rounded-lg border border-border bg-card p-6">
               <h2 className="text-xl">{a.title}</h2>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 {a.items.map((i) => (
                   <li key={i}>{i}</li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
