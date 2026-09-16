@@ -47,7 +47,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
         <div className="glow pointer-events-none absolute -top-40 left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 opacity-70" />
         <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="grid items-end gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(19rem,0.8fr)]">
+          <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(19rem,0.8fr)]">
             <div>
               <p className="eyebrow rise-in">Available for work — Lagos, Nigeria</p>
               <h1
