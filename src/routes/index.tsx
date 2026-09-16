@@ -101,7 +101,7 @@ function Index() {
               <figure className="relative overflow-hidden border border-border bg-card">
                 <img
                   src={professionalPortrait.url}
-                  alt="Portrait of Ogundele Israel Oluwaseun, creative technologist"
+                  alt="Portrait of Israel Ogundele, creative technologist"
                   width={704}
                   height={704}
                   fetchPriority="high"
@@ -109,7 +109,7 @@ function Index() {
                 />
                 <figcaption className="absolute inset-x-4 bottom-4 flex items-end justify-between border border-border bg-background/80 px-4 py-3 backdrop-blur-md">
                   <span>
-                    <span className="block text-xs font-medium uppercase">Ogundele Israel Oluwaseun</span>
+                    <span className="block text-xs font-medium uppercase">Israel Ogundele</span>
                     <span className="mt-1 block text-xs text-muted-foreground">Creative Technologist</span>
                   </span>
                   <span aria-hidden="true" className="text-xl text-primary">↗</span>
