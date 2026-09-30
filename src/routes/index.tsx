@@ -47,21 +47,19 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
         <div className="glow pointer-events-none absolute -top-40 left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 opacity-70" />
         <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div>
-            <p className="eyebrow rise-in">Available for work — Lagos, Nigeria</p>
-            <h1
-              className="rise-in mt-6 max-w-5xl text-5xl leading-[1.02] md:text-7xl"
-              style={{ animationDelay: "80ms" }}
-            >
-              I design identities, products and{" "}
-              <span className="text-primary">digital experiences</span> that turn ideas into
-              reality.
-            </h1>
-          </div>
-          <div className="mt-14 grid items-start gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(19rem,0.95fr)]">
+          <div className="mt-10 grid items-start gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)] lg:gap-16">
             <div>
+              <p className="eyebrow rise-in">Available for work — Lagos, Nigeria</p>
+              <h1
+                className="rise-in mt-6 text-5xl leading-[1.04] md:text-6xl xl:text-7xl"
+                style={{ animationDelay: "80ms" }}
+              >
+                I design identities, products and{" "}
+                <span className="text-primary">digital experiences</span> that turn ideas into
+                reality.
+              </h1>
               <p
-                className="rise-in max-w-xl text-lg text-muted-foreground"
+                className="rise-in mt-8 max-w-xl text-lg text-muted-foreground"
                 style={{ animationDelay: "180ms" }}
               >
                 I'm Ogundele Israel Oluwaseun, a multidisciplinary creative technologist. I combine
