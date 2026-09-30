@@ -61,7 +61,7 @@ function Index() {
           <div className="mt-14 grid items-start gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(19rem,0.95fr)]">
             <div>
               <p
-                className="rise-in mt-8 max-w-xl text-lg text-muted-foreground"
+                className="rise-in max-w-xl text-lg text-muted-foreground"
                 style={{ animationDelay: "180ms" }}
               >
                 I'm Ogundele Israel Oluwaseun, a multidisciplinary creative technologist. I combine
