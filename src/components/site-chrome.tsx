@@ -15,7 +15,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="font-display text-xl tracking-tight">
-          Israel<span className="text-primary">.</span>
+          Israel Ogundele<span className="text-primary">.</span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
           {nav.map((item) => (
