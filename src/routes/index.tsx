@@ -96,7 +96,7 @@ function Index() {
               </div>
             </div>
 
-            <Reveal delay={240} className="group relative mx-auto mt-2 w-full max-w-md lg:mx-0 lg:mt-[2.55rem]">
+            <Reveal delay={240} className="group relative mx-auto mt-2 w-full max-w-md lg:mx-0 lg:mt-[2.3rem]">
               <div className="absolute -inset-5 bg-primary/10 blur-3xl transition-opacity duration-500 group-hover:opacity-80" />
               <figure className="relative overflow-hidden border border-border bg-card">
                 <img
